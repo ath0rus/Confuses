@@ -111,6 +111,9 @@ async def on_message(msg):
             num1 = rand.randint(1, len(fs))
             await msg.channel.send(f'{msg.author}{fs[num1]}')
 
+        elif msg.content == '/only poop':
+            await msg.channel.send('https://tenor.com/view/poop-shit-skateboard-tricks-cool-gif-16727878')
+
         elif msg.content == '/pain':
             for i in range(5):
                 await msg.channel.send('YEET!!')
