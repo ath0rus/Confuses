@@ -4,7 +4,7 @@ import random as rand
 import time
 
 vchannels = ['1a', '2a', '💬-general', '🤖bot-commands-and-stuff']
-# vusers = ['ath0rus#2069', 'wallGraffiti#5365']
+# vusers = ['ath0rus#2069', 'wallGraffiti#5365', 'phos#4938']
 bad_words = ['yeet', 'damn']
 
 cat_gif = ['https://tenor.com/view/kitty-highkitten-mdmacat-cat-happykitty-gif-6198981', 'https://tenor.com/view/cat-meow-big-lips-gif-13233291', 'https://tenor.com/view/smiling-cat-creepy-cat-cat-zoom-kitty-gif-12199043', 'https://tenor.com/view/cats-whome-cute-awe-stare-gif-4004207', 'https://tenor.com/view/lazy-cat-stairs-gif-13378074']
@@ -55,7 +55,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print(f'logged on at: {dt.datetime.now()} and ready to go')
-    # await discord.activity
+    discord.game(name = '/help')
 
 @client.event
 async def on_message(msg):
@@ -107,9 +107,9 @@ async def on_message(msg):
             await msg.channel.send(cat_gif[num])
 
         elif msg.content == '/fait':
-            fs = [' Got Killed by a falling Minecraft Anvil', ' bled out from 28 stab wounds', ' Eaten to bits by Chonke Kittens', ' Fell off a sky scraper']
-            num1 = rand.randint(1, len(fs))
-            await msg.channel.send(f'{msg.author}{fs[num1]}')
+            fs = [' Got Killed by a falling Minecraft Anvil', ' bled out from 28 stab wounds', ' Was eaten to bits by Chonke Kittens', ' Fell off a sky scraper', ' Stayed up for too long and died from sleep deprivation', ' Bled oyt from a DEEEEEP paper cut', ' Spent to much time watching Juicy and drank Paint', ' Decided to play Dumb Ways to Die IRL and never got saved']
+            #num1 = rand.randint(1, len(fs) - 1)
+            await msg.channel.send(f'{msg.author.name}{rand.choice(fs)}')
 
         elif msg.content == '/only poop':
             await msg.channel.send('https://tenor.com/view/poop-shit-skateboard-tricks-cool-gif-16727878')
