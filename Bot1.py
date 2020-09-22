@@ -19,7 +19,11 @@ my_det = '''
 Host OS: Windows 10
 RAM: 8GB DDR3 or 12GB DDR4
 System Host IP: ||Nope||
-
+Host Manafatuer: Dell Desktop or Acer Laptop
+CPU: i5 8250U
+GPU: MX130 (deicated) or Intel HD Graphics
+Storage: 1TB samsung EVO SSD or LITEON 256GB SSD
+The Bots Code is stored on Github.com
 '''
 
 cmds = '''
@@ -55,7 +59,8 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print(f'logged on at: {dt.datetime.now()} and ready to go')
-    discord.game(name = '/help')
+    Game = discord.Game('waiting for /help')
+    await client.change_presence(status=discord.Status.idle, activity = Game)
 
 @client.event
 async def on_message(msg):
@@ -90,7 +95,7 @@ async def on_message(msg):
             await msg.channel.send(embed = embed1)
 
         elif msg.content == '/details':
-            embed2 = discord.Embed(titile = "Details", description = 'About me', timestamp = dt.datetime.now())
+            embed2 = discord.Embed(titile = "Details", description = 'About my Host\'s', timestamp = dt.datetime.now())
             embed2.add_field(name = 'My Details', value = my_det)
             embed2.colour = discord.Colour.from_rgb(30,255,255)
             embed2.set_thumbnail(url = 'https://image.freepik.com/free-icon/view-details_318-1493.jpg')
@@ -99,8 +104,8 @@ async def on_message(msg):
         elif msg.content == '/yeet':
             await msg.channel.send('https://tenor.com/view/yeet-rafiki-simba-lion-king-gif-12559094')
 
-        elif msg.content == 'yeet':
-            await msg.channel.send('https://tenor.com/view/yeet-rafiki-simba-lion-king-gif-12559094')
+        # elif msg.content == 'yeet':
+        #     await msg.channel.send('https://tenor.com/view/yeet-rafiki-simba-lion-king-gif-12559094')
 
         elif msg.content == '/cat':
             num = rand.randint(1, len(cat_gif) - 1)
@@ -120,9 +125,6 @@ async def on_message(msg):
             # time.sleep(5)
             # for i in range(5):
             #     await msg.channel.send('YEET!!')
-
-            
-
 
 @client.event
 async def on_memeber_join(member):
