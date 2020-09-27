@@ -5,7 +5,6 @@ import time
 
 vchannels = ['1a', '2a', '💬-general', '🤖bot-commands-and-stuff']
 # vusers = ['ath0rus#2069', 'wallGraffiti#5365', 'phos#4938']
-bad_words = ['yeet', 'damn']
 
 cat_gif = ['https://tenor.com/view/kitty-highkitten-mdmacat-cat-happykitty-gif-6198981', 'https://tenor.com/view/cat-meow-big-lips-gif-13233291', 'https://tenor.com/view/smiling-cat-creepy-cat-cat-zoom-kitty-gif-12199043', 'https://tenor.com/view/cats-whome-cute-awe-stare-gif-4004207', 'https://tenor.com/view/lazy-cat-stairs-gif-13378074']
 
@@ -125,6 +124,10 @@ async def on_message(msg):
             # time.sleep(5)
             # for i in range(5):
             #     await msg.channel.send('YEET!!')
+
+        elif msg.content.startswith == "Simon says":
+            await msg.channel.send(msg.content)
+            print(msg.content)
 
 @client.event
 async def on_memeber_join(member):
