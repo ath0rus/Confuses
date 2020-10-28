@@ -122,6 +122,7 @@ async def emoji(ctx):
 @bot.command()
 async def users(ctx):
     id = ctx.guild.id
-    await ctx.send(f'Number of Users = {id.member_count}')
+    await ctx.send('I am sorry that command is currently broken')
+    #await ctx.send(f'Number of Users = {id.member_count}')
 
 bot.run(token)
