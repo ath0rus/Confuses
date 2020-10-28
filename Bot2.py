@@ -30,7 +30,7 @@ The Bots Code is stored on Github.com
 cmds = '''
 **help**: Displays This message
 
-**users**: Displays the number of users in this server (including bots)
+**users**: Displays the number of users in this server (including bots) (broken)
 
 **yeet**: How could you yeet something so innocent
 
